@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/me/me",
+    "pages/home/home"
+  ],
+  "networkTimeout": {
+    "request": 600000,
+    "connectSocket": 600000,
+    "uploadFile": 600000,
+    "downloadFile": 600000
+  },
+  "window": {
+    "backgroundColor": "#f0f0f0",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f6f6f6",
+    "navigationBarTitleText": "宠物系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "服务",
+        "iconPath": "pages/img/home1.png",
+        "selectedIconPath": "pages/img/home2.png"
+      },
+      {
+      "pagePath": "pages/me/me",
+      "text": "我的",
+      "iconPath": "pages/img/me1.png",
+      "selectedIconPath": "pages/img/me2.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

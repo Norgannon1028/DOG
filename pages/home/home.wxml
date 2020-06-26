@@ -1,0 +1,14 @@
+<view class="container">
+   <view><image src='{{src}}' mode='aspectFit' bindtap='preview_img'></image></view>
+   <view class="userinfo">
+      <button bindtap='bindViewTap'>{{button_text}}</button>
+  </view>
+  <view class="btt">
+      <button class='bt2' bindtap='change' disabled="{{!flag}}">{{change_text}}</button>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" disabled="{{flag2}}">
+        <view class="picker" style="color:{{cl}}">
+            检测物体: {{array[index]}}
+        </view>
+</picker>
+  </view>
+</view>
