@@ -1,6 +1,6 @@
 Page({
   data: {
-    cl:"#f6f6f6",
+    cl:"#ffffff",
     src:'',
     button_text:"选择图片",
     flag:1,
@@ -74,7 +74,7 @@ Page({
       this.setData({ flag2: 0, change_text: "物体检测" ,cl:"#000000"})
     }
     else{
-      this.setData({ flag2: 1, change_text: "品种识别", cl: "#f6f6f6"})
+      this.setData({ flag2: 1, change_text: "品种识别", cl: "#ffffff"})
     }
     
   },
@@ -85,6 +85,22 @@ Page({
     })
   },
   button_down() {
+    /*wx.navigateTo({
+      url: 'pages/result/result',
+      events: {
+        // 为指定事件添加一个监听器，获取被打开页面传送到当前页面的数据
+        acceptDataFromOpenedPage: function(data) {
+          console.log(data)
+        },
+        someEvent: function(data) {
+          console.log(data)
+        }
+      },
+      success: function(res) {
+        // 通过eventChannel向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromOpenerPage', { data: 'src' })
+      }
+    })*/
     wx.request({
       url: 'http://175.24.53.216/yolo/test.php',
       data: {
