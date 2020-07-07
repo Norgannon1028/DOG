@@ -10,6 +10,7 @@ Page({
     button_text:"选择图片",
     flag:1,
     change_text:"品种识别",
+    resultMessage:'',
     flag2:1,
     array: ['人', '鸟', '猫', '狗', '马', '羊', '牛', '象', '熊'],
     index:0
@@ -18,13 +19,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(option){
-    console.log(option.query)
-    const eventChannel = this.getOpenerEventChannel()
-    // 监听acceptDataFromOpenerPage事件，获取上一页面通过eventChannel传送到当前页面的数据
-    eventChannel.on('acceptDataFromOpenerPage', function(src) {
-      this.setData({ src: "src" })
+  onLoad: function (options) {
+    var that=this
+    var resultMessage = JSON.parse(options.resultMessage);
+    that.setData({
+      resultMessage:resultMessage
     })
+    //console.log(that.data.queryBean)
   },
 
   /**

@@ -1,10 +1,11 @@
 <view class="container">
    <view><image src='{{src}}' mode='aspectFit' bindtap='preview_img'></image></view>
    <view class="userinfo">
-      <button bindtap='bindViewTap'>{{button_text}}</button>
+      <button bindtap='bindViewTap' disabled="{{!flag}}" wx:if="{{flag}}">{{button_text}}</button>
+      <button bindtap='toResult' disabled="{{flag}}" class="btt" wx:if="{{!flag}}">查看结果</button>
   </view>
   <view class="btt">
-      <button class='bt2' bindtap='change' disabled="{{!flag}}">{{change_text}}</button>
+      <button class='bt2' bindtap='change' disabled="{{!flag}}" wx:if="{{flag}}">{{change_text}}</button>
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" disabled="{{flag2}}">
         <view class="picker" style="color:{{cl}}" wx:if="{{!flag2}}">
             检测物体: {{array[index]}}

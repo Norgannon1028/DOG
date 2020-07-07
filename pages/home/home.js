@@ -7,8 +7,9 @@ Page({
     change_text:"品种识别",
     flag2:1,
     array: ['人', '鸟', '猫', '狗', '马', '羊', '牛', '象', '熊'],
-    index:0
-  },
+    index:0,
+    resultMessage:"gugu",
+  }, 
   bindViewTap: function () {
     if(this.data.flag==1){
       if (this.data.flag2 == 1) {
@@ -35,8 +36,10 @@ Page({
               'item':that.data.index 
             },
             success: function (res) {
-              that.setData({ flag: 1, button_text: "选择图片" })
+              //that.setData({ flag: 1, button_text: "选择图片" })
               var data = res.data
+              //that.setData({ resultMessage: "gugugu" })
+              that.setData({ resultMessage: data })
               console.log(data)
               wx.showModal({
                 title: '提示',
@@ -84,6 +87,16 @@ Page({
       index: e.detail.value
     })
   },
+  toResult:function(){
+    var that=this;
+    console.log(that.data.resultMessage);
+    var resultMessage = JSON.stringify(that.data.resultMessage);
+    console.log(resultMessage);
+    wx.redirectTo({
+      url: '/pages/result/result?resultMessage='+ resultMessage,
+      });
+  },
+
   button_down() {
     /*wx.navigateTo({
       url: 'pages/result/result',

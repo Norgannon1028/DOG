@@ -1,12 +1,4 @@
 <view class="container">
-   <view><image src='{{src}}' mode='aspectFit' bindtap='preview_img'></image></view>
-   <view class="userinfo">
-      <button bindtap='bindViewTap'>{{button_text}}</button>
-  </view>
-  <view class="btt">
-      <view>检测物体: {{array[index]}}</view>
-      <button class='bt2' bindtap='back' disabled="{{!flag}}">{{change_text}}</button>
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" disabled="{{flag2}}" wx:if="{{flag2}}" >
-      </picker>
+   <view>{{resultMessage}}
   </view>
 </view>
